@@ -1,3 +1,10 @@
+const isDev = import.meta.env.DEV;
+
+const API_BASE_URL = isDev
+  ? '/api/v1' // local proxy path
+  : 'https://backend.digantara.dev/v1'; // real API in prod
+
+
 export async function fetchSatellitesBySearch(query: string) {
   const attributes = [
     "noradCatId",
@@ -10,7 +17,7 @@ export async function fetchSatellitesBySearch(query: string) {
   ];
 
 const response = await fetch(
-  `/api/v1/satellites?attributes=${attributes.join(",")}`
+  `${API_BASE_URL}/satellites?attributes=${attributes.join(",")}`
 );
 
 

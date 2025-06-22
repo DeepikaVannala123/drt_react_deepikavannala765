@@ -1,6 +1,11 @@
 import type { SatelliteApiResponse, SearchFilters, ObjectType, OrbitCode } from '../types/satellite';
 
-const API_BASE_URL = 'https://backend.digantara.dev/v1';
+const isDev = import.meta.env.DEV;
+
+const API_BASE_URL = isDev
+  ? '/api/v1' // local proxy path
+  : 'https://backend.digantara.dev/v1'; // real API in prod
+
 
 const OBJECT_TYPES: ObjectType[] = ["ROCKET BODY", "DEBRIS", "UNKNOWN", "PAYLOAD"];
 const ORBIT_CODES: OrbitCode[] = [
@@ -22,7 +27,7 @@ export const satelliteApi = {
     // Add all attributes
     params.append('attributes', 'noradCatId,intlDes,name,launchDate,decayDate,objectType,launchSiteCode,countryCode,orbitCode');
     
-    const url = `api/v1/satellites?${params.toString()}`;
+    const url = `${API_BASE_URL}/satellites?${params.toString()}`;
     
     const response = await fetch(url, {
       headers: {
