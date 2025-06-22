@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Satellite as SatelliteIcon, Download, Share } from 'lucide-react';
+import { ArrowLeft, Satellite as SatelliteIcon, Download } from 'lucide-react';
 import { useSelectedSatellites } from '../contexts/SelectedSatellitesContext';
 
 interface SelectedSatellitesProps {
@@ -30,24 +30,7 @@ export const SelectedSatellites: React.FC<SelectedSatellitesProps> = ({ onBack }
     URL.revokeObjectURL(url);
   };
 
-  const handleShare = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: 'Selected Satellites',
-          text: `I've selected ${selectedSatellites.length} satellites for analysis`,
-          url: window.location.href
-        });
-      } catch (error) {
-        console.log('Share cancelled');
-      }
-    } else {
-      // Fallback: copy to clipboard
-      const text = selectedSatellites.map((s:any) => `${s.name} (${s.noradCatId})`).join('\n');
-      await navigator.clipboard.writeText(text);
-      alert('Satellite list copied to clipboard!');
-    }
-  };
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
@@ -72,14 +55,6 @@ export const SelectedSatellites: React.FC<SelectedSatellitesProps> = ({ onBack }
             </p>
           </div>
           <div className="flex gap-3">
-            <button
-              onClick={handleShare}
-              className="flex items-center gap-2 px-4 py-2 text-slate-600 hover:text-slate-900 
-                       hover:bg-white rounded-lg transition-all duration-200"
-            >
-              <Share className="h-4 w-4" />
-              Share
-            </button>
             <button
               onClick={handleExport}
               className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white 

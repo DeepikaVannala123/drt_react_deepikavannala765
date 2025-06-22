@@ -64,7 +64,7 @@ export const SelectionPanel: React.FC<SelectionPanelProps> = ({ onProceed }) => 
                 <button
                   onClick={() => handleRemoveIndividual(satellite.noradCatId)}
                   className="flex-shrink-0 p-1 text-slate-400 hover:text-red-500 hover:bg-red-50 
-                           rounded transition-colors opacity-0 group-hover:opacity-100"
+                           rounded transition-colors opacity-1 group-hover:opacity-100"
                   title="Remove this satellite"
                 >
                   <X className="h-4 w-4" />

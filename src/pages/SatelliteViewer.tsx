@@ -143,13 +143,8 @@ export const SatelliteViewer: React.FC<SatelliteViewerProps> = ({ onProceedToSel
         </div>
 
         <div className="grid lg:grid-cols-4 gap-6">
-          {/* Selection Panel */}
-          <div className="lg:col-span-1 order-2 lg:order-1">
-            <SelectionPanel onProceed={onProceedToSelection} />
-          </div>
-
-          {/* Main Content */}
-          <div className="lg:col-span-3 order-1 lg:order-2">
+                    {/* Main Content */}
+          <div className="lg:col-span-3 order-1 lg:order-1">
             {isLoading ? (
               <div className="h-96">
                 <LoadingState />
@@ -162,6 +157,10 @@ export const SatelliteViewer: React.FC<SatelliteViewerProps> = ({ onProceedToSel
                 showSelection={true}
               />
             )}
+          </div>
+          {/* Selection Panel */}
+          <div className="lg:col-span-1 order-2 lg:order-2">
+            <SelectionPanel onProceed={onProceedToSelection} />
           </div>
         </div>
       </div>
