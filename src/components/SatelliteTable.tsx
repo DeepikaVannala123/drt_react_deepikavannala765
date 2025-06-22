@@ -114,8 +114,12 @@ export const SatelliteTable: React.FC<SatelliteTableProps> = ({
           </div>
           <div className="col-span-2 hidden md:block">OBJECT TYPE</div>
           <div className="col-span-1 hidden md:block">ORBIT</div>
-          <div className="col-span-2 hidden md:block">Country</div>
-          <div className="col-span-1 hidden md:block">Launch</div>
+          <div className="col-span-2 hidden md:block">
+             <SortButton field="countryCode" label="Country" />
+          </div>
+          <div className="col-span-1 hidden md:block">
+            <SortButton field="launchDate" label="Launch" />
+          </div>
         </div>
       </div>
 
@@ -188,7 +192,7 @@ export const SatelliteTable: React.FC<SatelliteTableProps> = ({
                   </div>
                   <div className="col-span-1 hidden md:block">
                     <div className="flex items-center gap-1">
-                      <Calendar className="h-3 w-3 text-slate-400" />
+                      <Calendar className="h-3 w-3" />
                       <span className="text-xs text-slate-500">{formatDate(satellite.launchDate)}</span>
                     </div>
                   </div>
