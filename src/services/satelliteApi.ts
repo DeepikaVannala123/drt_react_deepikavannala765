@@ -22,7 +22,7 @@ export const satelliteApi = {
     // Add all attributes
     params.append('attributes', 'noradCatId,intlDes,name,launchDate,decayDate,objectType,launchSiteCode,countryCode,orbitCode');
     
-    const url = `${API_BASE_URL}/satellites?${params.toString()}`;
+    const url = `api/v1/satellites?${params.toString()}`;
     
     const response = await fetch(url, {
       headers: {

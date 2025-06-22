@@ -9,11 +9,10 @@ export async function fetchSatellitesBySearch(query: string) {
     "countryCode",
   ];
 
-  const response = await fetch(
-    `https://backend.digantara.dev/v1/satellites?attributes=${attributes.join(
-      ","
-    )}`
-  );
+const response = await fetch(
+  `/api/v1/satellites?attributes=${attributes.join(",")}`
+);
+
 
   if (!response.ok) {
     throw new Error("Failed to fetch satellites");
