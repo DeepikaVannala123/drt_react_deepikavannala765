@@ -4,7 +4,7 @@ const isDev = import.meta.env.DEV;
 
 const API_BASE_URL = isDev
   ? '/api/v1' // local proxy path
-  : 'https://backend.digantara.dev/v1'; // real API in prod
+  : 'https://backend.digantara.dev/v1'; 
 
 
 const OBJECT_TYPES: ObjectType[] = ["ROCKET BODY", "DEBRIS", "UNKNOWN", "PAYLOAD"];

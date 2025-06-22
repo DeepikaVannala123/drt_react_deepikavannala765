@@ -29,7 +29,7 @@ export const SelectionPanel: React.FC<SelectionPanelProps> = ({ onProceed }) => 
             className="flex items-center gap-1 text-sm text-slate-500 hover:text-red-600 transition-colors"
             title="Clear all selections"
           >
-            <Trash2 className="h-4 w-4" />
+            <X className="h-4 w-4"/>
             Clear All
           </button>
         )}

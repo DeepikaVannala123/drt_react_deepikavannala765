@@ -1,7 +1,7 @@
 import React from 'react';
 import { Filter, X } from 'lucide-react';
 import type { ObjectType, OrbitCode, SearchFilters } from '../types/satellite';
-import { satelliteApi } from '../services/SatelliteApi';
+import { satelliteApi } from '../services/satelliteApi';
 
 interface FilterPanelProps {
   filters: SearchFilters;

@@ -141,6 +141,7 @@ export const SatelliteViewer: React.FC<SatelliteViewerProps> = ({ onProceedToSel
             hasActiveFilters={hasActiveFilters}
           />
         </div>
+ 
 
         <div className="grid lg:grid-cols-4 gap-6">
                     {/* Main Content */}
